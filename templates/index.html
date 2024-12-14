@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metro Route Finder</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Metro Route Finder</h1>
+        </header>
+        <main>
+            <form action="/calculate" method="post" class="form-container">
+                <label for="source">Source Station:</label>
+                <select id="source" name="source" required>
+                    <option value="" disabled selected>Select a source station</option>
+                    <option value="0">Majestic</option>
+                    <option value="1">MG Road</option>
+                    <option value="2">Indiranagar</option>
+                    <option value="3">KR Puram</option>
+                    <option value="4">Whitefield</option>
+                    <option value="5">Electronic City</option>
+                    <option value="6">Banashankari</option>
+                    <option value="7">Jayanagar</option>
+                    <option value="8">Yeshwanthpur</option>
+                    <option value="9">Hebbal</option>
+                </select>
+
+                <label for="destination">Destination Station:</label>
+                <select id="destination" name="destination" required>
+                    <option value="" disabled selected>Select a destination station</option>
+                    <option value="0">Majestic</option>
+                    <option value="1">MG Road</option>
+                    <option value="2">Indiranagar</option>
+                    <option value="3">KR Puram</option>
+                    <option value="4">Whitefield</option>
+                    <option value="5">Electronic City</option>
+                    <option value="6">Banashankari</option>
+                    <option value="7">Jayanagar</option>
+                    <option value="8">Yeshwanthpur</option>
+                    <option value="9">Hebbal</option>
+                </select>
+
+                <button type="submit">Calculate Route</button>
+            </form>
+        </main>
+        <footer>
+            <p>&copy; 2024 Metro Route Finder. All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

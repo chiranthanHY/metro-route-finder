@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Route Result</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Metro Route Result</h1>
+        </header>
+        <main>
+            <div id="map" style="height: 600px;"></div>
+            <div class="result-container">
+                <pre>{{ output }}</pre>
+                <p><strong>Total Distance:</strong> {{ distance }} km</p>
+                <p><strong>Total Fare:</strong> {{ fare }} RS</p>
+            </div>
+            <a href="/" class="back-button">Back to Home</a>
+        </main>
+        <footer>
+            <p>&copy; 2024 Metro Route Finder. All Rights Reserved.</p>
+        </footer>
+    </div>
+    <script>
+        var map = L.map('map').setView([12.9716, 77.5946], 13); // Bengaluru coordinates
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        var stations = [
+            { id: 0, name: 'Station 0', coords: [12.9716, 77.5946] },
+            { id: 1, name: 'Station 1', coords: [12.9750, 77.5913] },
+            { id: 2, name: 'Station 2', coords: [12.9780, 77.5980] },
+            { id: 3, name: 'Station 3', coords: [12.9820, 77.6040] },
+            { id: 4, name: 'Station 4', coords: [12.9880, 77.6100] },
+            { id: 5, name: 'Station 5', coords: [12.9900, 77.6170] },
+            { id: 6, name: 'Station 6', coords: [12.9950, 77.6200] },
+            { id: 7, name: 'Station 7', coords: [13.0000, 77.6250] },
+            { id: 8, name: 'Station 8', coords: [13.0050, 77.6300] },
+            { id: 9, name: 'Station 9', coords: [13.0100, 77.6350] }
+        ];
+
+        stations.forEach(function(station) {
+            L.marker(station.coords).addTo(map).bindPopup(station.name);
+        });
+
+        var route = {{ route | tojson }};
+        var routeCoords = route.map(id => stations[id].coords);
+
+        L.polyline(routeCoords, { color: 'blue', weight: 3 }).addTo(map);
+    </script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+/* General Reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url('/static/images/metro-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Main Container */
+.container {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+    margin-left: 30px; /* Space from the left */
+}
+
+/* Header */
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #ff6f61;
+}
+
+/* Form and Labels */
+label {
+    display: block;
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+/* Dropdowns and Buttons */
+select, button {
+    font-size: 1em;
+    padding: 10px;
+    width: 100%;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+/* Button Styles */
+button {
+    background-color: #ff6f61;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #e6554f;
+}
+
+/* Map Container */
+#map {
+    border: 2px solid #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px auto;
+}
+
+/* Result Container */
+.result-container {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    text-align: left;
+    font-size: 1.1em;
+}
+
+/* Back Button */
+.back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #ff6f61;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #e6554f;
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #ccc;
+}
+
+/* Centering the container and giving it left margin */
+.container {
+    margin-left: 20px; /* Provides space from the left */
+    width: 80%; /* Ensures it's not too wide */
+    text-align: left; /* Align text left */
+}
+
+/* Adjust the result container margin for better spacing */
+.result-container {
+    margin-top: 30px; /* Space between result container and other content */
+    padding: 20px;
+}
